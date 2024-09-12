@@ -21,7 +21,7 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  margin: 2rem;
   padding: 0rem 2rem;
   min-width: 320px;
   min-height: 100vh;
@@ -30,6 +30,11 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0;
+  font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 button {
@@ -52,12 +57,21 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-textarea,
-select,
-option {
+textarea {
   font-family: Prompt;
   font-size: 1.2rem;
   background-color: #ececec;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+select,
+option {
+  font-family: Prompt;
+  font-size: 1rem;
+  background-color: #ececec;
+  border-radius: 0.5rem;
+  padding: 0.2rem 1rem;
 }
 
 pre {
@@ -67,7 +81,4 @@ pre {
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
   font-family: Prompt;
-  border: 1px solid;
-  padding: 1rem;
-  border-radius: 1rem;
 }

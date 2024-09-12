@@ -50,6 +50,7 @@ function App() {
   return (
     <>
       <h1>Write Email to Ajarn</h1>
+      <i>Powered by Google Gimini</i>
 
       <div className="form-wrapper">
         <textarea
@@ -77,7 +78,11 @@ function App() {
           {loading ? "Loading" : "Submit"}
         </button>
       </div>
-      <pre>{response}</pre>
+      {response && (
+        <div className="response-wrapper">
+          <pre>{response}</pre>
+        </div>
+      )}
     </>
   );
 }
