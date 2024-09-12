@@ -63,6 +63,8 @@ textarea {
   background-color: #ececec;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
+  resize: both;
+  width: 90%;
 }
 
 select,
@@ -74,6 +76,9 @@ option {
   padding: 0.2rem 1rem;
 }
 
+label {
+  margin-right: 0.5rem;
+}
 pre {
   white-space: pre-wrap; /* Since CSS 2.1 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */

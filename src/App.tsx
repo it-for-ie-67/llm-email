@@ -56,23 +56,27 @@ function App() {
         <textarea
           name="story"
           rows={4}
-          cols={50}
+          // cols={50}
           value={story}
           onChange={handleChange}
         />
         <div className="select-wrapper">
-          <label htmlFor="gender">Gender</label>
-          <select name="gender" onChange={handleChange}>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-          <label htmlFor="tone">Tone</label>
-          <select name="tone" onChange={handleChange}>
-            <option value="very formal">Very Formal</option>
-            <option value="formal">Formal</option>
-            <option value="casual">Casual</option>
-            <option value="funny">Funny</option>
-          </select>
+          <div>
+            <label htmlFor="gender">Gender</label>
+            <select name="gender" onChange={handleChange}>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="tone">Tone</label>
+            <select name="tone" onChange={handleChange}>
+              <option value="very formal">Very Formal</option>
+              <option value="formal">Formal</option>
+              <option value="casual">Casual</option>
+              <option value="funny">Funny</option>
+            </select>
+          </div>
         </div>
         <button onClick={handleSubmit} disabled={loading}>
           {loading ? "Loading" : "Submit"}
