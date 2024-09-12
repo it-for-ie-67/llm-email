@@ -3,7 +3,7 @@ import "./App.css";
 
 const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const storyInit =
-  "ขอพบ วันจันทร์ นี้ คอน 10 โมง ว่างมั้ย อยากปรึกษาเรื่องโปรเจค";
+  "ขอพบ วันจันทร์ นี้ ตอน 10 โมง ว่างมั้ย อยากปรึกษาเรื่องโปรเจค";
 function App() {
   const [story, setStory] = useState(storyInit);
   const [gender, setGender] = useState("male");
@@ -50,7 +50,8 @@ function App() {
   return (
     <>
       <h1>Write Email to Ajarn</h1>
-      <div>
+
+      <div className="form-wrapper">
         <textarea
           name="story"
           rows={4}
@@ -58,24 +59,24 @@ function App() {
           value={story}
           onChange={handleChange}
         />
+        <div className="select-wrapper">
+          <label htmlFor="gender">Gender</label>
+          <select name="gender" onChange={handleChange}>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <label htmlFor="tone">Tone</label>
+          <select name="tone" onChange={handleChange}>
+            <option value="very formal">Very Formal</option>
+            <option value="formal">Formal</option>
+            <option value="casual">Casual</option>
+            <option value="funny">Funny</option>
+          </select>
+        </div>
+        <button onClick={handleSubmit} disabled={loading}>
+          {loading ? "Loading" : "Submit"}
+        </button>
       </div>
-      <div>
-        <select name="gender" onChange={handleChange}>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
-      <div>
-        <select name="tone" onChange={handleChange}>
-          <option value="very formal">Very Formal</option>
-          <option value="formal">Formal</option>
-          <option value="casual">Casual</option>
-          <option value="inappropriate">Inappropriate</option>
-        </select>
-      </div>
-      <button onClick={handleSubmit} disabled={loading}>
-        {loading ? "Loading" : "Submit"}
-      </button>
       <pre>{response}</pre>
     </>
   );
